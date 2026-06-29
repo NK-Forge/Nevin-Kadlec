@@ -1,250 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <!--Favicon-->
+    <meta name="description" content="Nevin Kadlec — Full-Stack Software Engineer, Product Builder, and Founder of NK-Forge. Practical software systems for real-world workflows.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
-    <!--Scaling-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Tab Title-->
-    <title>Nevin Kadlec</title>
-    <link href="resources/css/index.css" rel="stylesheet" type="text/css" />
+
+    <title>Nevin Kadlec | NK-Forge</title>
+    <link href="resources/css/index.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <div class="crt-screen">
-        <!--Welcome-->
-        <div class="container">
-            <h1>> Welcome_<span class="cursor"></span></h1>
-            <p>Please enjoy this site for your viewing pleasure.</p>
-            <!--Profile Picture-->
-            <img src="resources/media/profile_pic.jpg" alt="Man sitting in a big chair with a big black dog sitting on his lap."/>
-        </div>
-        <div class="coverLetter">
-            <!--Introduction-->
-            <article>
-                <h2>> About Me:</h2>
-                <p>
-                    Hello! I'm Nevin Kadlec, a new software developer specializing in full-stack
-                    Python development with hands-on experience in web application
-                    deployment and cloud services. I've successfully built and deployed secure
-                    web applications using Django and PostgreSQL, demonstrating practical
-                    experience in both development and DevOps practices. My commitment to
-                    security best practices and cloud infrastructure makes me a well-rounded
-                    developer who can contribute across the development lifecycle. If you would like to jump to the Resume section please click <a href="#resume">HERE</a>.
-                </p>
-                <!--Skills Header-->
-                <h2 class="techSkills">
-                    > Technical Skills
-                </h2>
-                <!--Structure unorganized lists with list items for displaying skills-->
-                <ul>
-                    <li>
-                        Backend Development:
+    <main class="crt-site" aria-label="Nevin Kadlec retro CRT portfolio">
+        <section class="crt-screen" aria-label="Portfolio content displayed on CRT screen">
+            <div class="terminal-window">
+                <div class="terminal-bar" aria-hidden="true">
+                    <span>NK-FORGE.SYSTEM</span>
+                    <span>PORTFOLIO.HTML</span>
+                    <span>_ □ ×</span>
+                </div>
+
+                <header class="hero">
+                    <img
+                        class="profile-photo"
+                        src="resources/media/profile_pic.jpg"
+                        alt="Nevin Kadlec with his black dog Roscoe."
+                    >
+                    <div class="hero-copy">
+                        <p class="eyebrow">nevin@nk-forge:~$ whoami</p>
+                        <h1>Nevin Kadlec</h1>
+                        <p class="subtitle">Full-Stack Software Engineer | Product Builder | Founder of NK-Forge</p>
+                        <p>
+                            Building practical software systems for real-world workflows:
+                            web apps, desktop tools, backend services, automation, and AI-assisted engineering.
+                        </p>
+                    </div>
+                </header>
+
+                <div class="grid two-col">
+                    <article class="panel">
+                        <h2>&gt; About</h2>
+                        <p>
+                            Based in Fargo, North Dakota. Through NK-Forge, I build and refine practical software across
+                            full-stack web applications, backend systems, desktop utilities, automation tools, and
+                            AI-assisted engineering workflows.
+                        </p>
+                        <p>
+                            My background includes warehouses, manufacturing, equipment, trucking, and real-world
+                            operations, so I care about software that fits how people actually work.
+                        </p>
+                    </article>
+
+                    <article class="panel">
+                        <h2>&gt; Quick Review Path</h2>
                         <ul>
-                            <li>Python, Django, C, C++, C#</li>
-                            <li>Database Management: PostgreSQL, SQLite3 (including migration experience), MongoDB</li>
-                            <li>API Development and Integration</li>
+                            <li><a href="https://github.com/NK-Forge/DocumentDispatchService" target="_blank" rel="noopener">Document Dispatch Service</a> — backend systems</li>
+                            <li><a href="https://github.com/NK-Forge/mod_Loader" target="_blank" rel="noopener">Space Marine 2 Mod Loader / Launcher</a> — real-world desktop software</li>
+                            <li><a href="https://github.com/NK-Forge/fullstack-ecommerce-app" target="_blank" rel="noopener">Full-Stack E-Commerce Application</a> — product delivery</li>
+                            <li><a href="https://github.com/NK-Forge/ForgeBoard" target="_blank" rel="noopener">ForgeBoard</a> — full-stack fundamentals</li>
                         </ul>
-                    </li>
-                    <li>
-                        Cloud &amp; DevOps:
+                    </article>
+                </div>
+
+                <div class="grid two-col">
+                    <article class="panel">
+                        <h2>&gt; Technical Focus</h2>
                         <ul>
-                            <li>AWS Services (S3, IAM)</li>
-                            <li>Linux Server Administration (Ubuntu)</li>
-                            <li>Version Control: Git, GitHub</li>
-                            <li>Web Server: Apache2</li>
+                            <li><strong>Frontend:</strong> React, TypeScript, JavaScript, HTML, CSS, TailwindCSS</li>
+                            <li><strong>Backend:</strong> Node.js, Express, ASP.NET Core, REST APIs, PostgreSQL, Entity Framework Core</li>
+                            <li><strong>Desktop &amp; Local Tools:</strong> Electron, Python, Tkinter</li>
+                            <li><strong>DevOps &amp; Practices:</strong> Git, GitHub Actions, Docker, CI/CD, testing, API design</li>
                         </ul>
-                    </li>
-                    <li>
-                        Security Implementation:
+                    </article>
+
+                    <article class="panel">
+                        <h2>&gt; Engineering Principles</h2>
                         <ul>
-                            <li>ModSecurity</li>
-                            <li>Fail2Ban</li>
-                            <li>Authentication &amp; Authorization</li>
-                            <li>Data, Infrastructure, API</li>
-                            <li>File Handling</li>
-                            <li>Password Policies</li>
-                            <li>Rate Limiting</li>
-                            <li>CORS/CSRF Protection</li>
-                            <li>Security Headers</li>
+                            <li>Understand the workflow before overbuilding the solution</li>
+                            <li>Keep architecture understandable enough to maintain</li>
+                            <li>Validate behavior with tests, CI, and runtime checks</li>
+                            <li>Use AI carefully, but never as a substitute for verification</li>
                         </ul>
-                    </li>
-                    <li>
-                        Front End:
+                    </article>
+                </div>
+
+                <article class="panel">
+                    <h2>&gt; Public Projects Worth Reviewing</h2>
+                    <div class="project-list">
+                        <section>
+                            <h3>Document Dispatch Service</h3>
+                            <p>
+                                ASP.NET Core, PostgreSQL, EF Core, Docker, background workers, retry handling,
+                                lease-based job coordination, Prometheus metrics, and an ops dashboard.
+                            </p>
+                            <p class="why">Backend system design, concurrency handling, job ownership, and operational visibility.</p>
+                        </section>
+
+                        <section>
+                            <h3>Space Marine 2 Mod Loader / Launcher</h3>
+                            <p>
+                                Windows desktop mod manager released on Nexus Mods with 1,000+ unique users and
+                                1,300+ total downloads.
+                            </p>
+                            <p class="why">Real user-facing desktop software with release packaging, support concerns, and safe local file workflows.</p>
+                        </section>
+
+                        <section>
+                            <h3>Full-Stack E-Commerce Application</h3>
+                            <p>
+                                React, Node/Express, PostgreSQL, Google OAuth, Stripe Checkout, Stripe webhooks,
+                                OpenAPI docs, tests, linting, and Render deployment.
+                            </p>
+                            <p class="why">End-to-end product delivery across frontend, backend, payments, auth, APIs, and deployment.</p>
+                        </section>
+
+                        <section>
+                            <h3>ForgeBoard</h3>
+                            <p>
+                                React, Node/Express, PostgreSQL/Neon, CRUD workflows, route tests, component tests,
+                                security middleware, and deployment-ready structure.
+                            </p>
+                            <p class="why">Clean full-stack fundamentals, project/task data modeling, validation, and practical app structure.</p>
+                        </section>
+                    </div>
+                </article>
+
+                <div class="grid two-col">
+                    <article class="panel">
+                        <h2>&gt; Private / In-Progress</h2>
                         <ul>
-                            <li>HTML, CSS, JavaScript</li>
-                            <li>Responsive Design</li>
-                            <li>UI Implementation</li>
+                            <li><strong>NK-Forge Orchestrator:</strong> private TypeScript CLI/workspace for AI-assisted engineering workflows</li>
+                            <li><strong>NK-Forge Classroom:</strong> private household education platform</li>
+                            <li><strong>Ember:</strong> private business operations and invoicing platform</li>
+                            <li><strong>Email List Cleaner:</strong> local-first list validation and cleanup tool</li>
                         </ul>
-                    </li>    
-                    <li>
-                        Additional Tools &amp; Libraries:
+                    </article>
+
+                    <article class="panel">
+                        <h2>&gt; Contact</h2>
                         <ul>
-                            <li>Pandas, Beautiful Soup, Tkinter, Socket, Pillow</li>
-                            <li>IDEs: Visual Studio, VS Code</li>
-                            <li>Package Management: pip</li>
+                            <li><strong>Portfolio:</strong> <a href="https://nevinkadlec.com" target="_blank" rel="noopener">nevinkadlec.com</a></li>
+                            <li><strong>GitHub:</strong> <a href="https://github.com/NK-Forge" target="_blank" rel="noopener">github.com/NK-Forge</a></li>
+                            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nevin-kadlec/" target="_blank" rel="noopener">linkedin.com/in/nevin-kadlec</a></li>
+                            <li><strong>Email:</strong> <a href="mailto:dev@nkforge.com">dev@nkforge.com</a></li>
                         </ul>
-                    </li>
-                </ul>
-                <!-- Strengths Header-->
-                <h2 class="proStrengths">
-                    > Professional Strengths
-                </h2>
-                <!--List of Strengths using an Unorganized list and list items-->
-                <ul>
-                    <ul>
-                        <li>Experience with full deployment lifecycle from development to production</li>
-                        <li>Strong focus on security implementation and best practices</li>
-                        <li>Practical experience in database migration and management</li>
-                        <li>Efficient problem-solving, analytical and debugging capabilities</li>
-                        <li>Clear communication and documentation skills</li>
-                        <li>Commitment to continuous learning</li>
-                    </ul>    
-                </ul>
-                <!--Services Offered Header-->
-                <h2 class="services">
-                    > Services Offered
-                </h2>
-                <!--Using Unorganized List with list items to display actual services-->
-                <ul>
-                    <ul>
-                        <li>Full-stack Web Application Development</li>
-                        <li>Server Setup and Security Implementation</li>
-                        <li>Cloud Integration and Management</li>
-                        <li>Database Design and Migration</li>
-                        <li>Custom Software Solutions</li>
-                        <li>Code Review and Optimization</li>
-                    </ul>   
-                </ul>
-            </article>
-            <div class="portfolio">
-                <!--Protfolio Head-->
-                <h2 class="portHead">
-                    > Portfolio
-                </h2>
-                <p>I maintain an active <a href="https://github.com/ErzaKaneki" target="_blank">GitHub</a> profile where I showcase my projects and development work.  My repositories demonstrate 
-                my course work that I have completed.  My private projects i.e. Echoe5.com, backend private game server work, and E-commerce development are all fully restricted or partly restricted due to privacy and security reasoning</p>
+                    </article>
+                </div>
+
+                <footer class="terminal-footer">
+                    <span>nevin@nk-forge:~$</span><span class="cursor" aria-hidden="true"></span>
+                </footer>
             </div>
-            <div class="contact">
-                <!--Contact Header-->
-                <h2>
-                    > Contact
-                </h2>
-                <p>I'm excited to discuss how my technical skills and problem-solving abilities can contribute to your team's success.</p>
-                
-                <p>Feel free to send me an <a href="mailto:nevin.kadlec@gmail.com">Email</a> and check out my <a href="https://www.linkedin.com/in/nevin-kadlec" target="_blank">LinkedIn</a> profile.</p>
-                <p>> _<span class="cursor"></span></p>
-            </div>
-        </div>
-        <div id="resume">
-            <h1>
-                > RESUME
-            </h1>
-            <article>
-                <h2 class="summary">> Project Summary</h2>
-                    <h3>Echoe5.com Blog Platform - Full Stack Web Developer (11-2024 to Present)</h3>
-                        <h4>Project Overview: Developed a full-stack blog platform using Django and PostgreSQL, featuring user authentication, content management, and secure deployment.</h4>
-                        <h4>Key Responsibilities:</h4>
-                        <ul>
-                            <ul>                            
-                                <li>Built responsive frontend using Bootstrap, JavaScript, and custom CSS with dynamic dark/light theme support</li>
-                                <li>Integrated AWS S3 for scalable static and media file storage</li>
-                                <li>Configured Apache web server with ModSecurity WAF and implemented SSL/TLS with Let's Encrypt</li>
-                                <li>Created RESTful API endpoints using Django REST Framework with comprehensive documentation</li>
-                                <li>Implemented OAuth2 integration for streamlined social login via Google</li>
-                                <li>Designed automated backup and monitoring systems for robust production deployment</li>
-                                <li>Optimized application for both Windows development and Linux production</li>
-                            </ul>    
-                        </ul>
-
-                        <h3>E-commerce Platform Development (12-2024 to Present)</h3>
-                        
-                            <h4>Project Overview: Designed and developed a commercial e-commerce platform with React and Node.js featuring and admin dashboard, inventory management, payment processing, and analytics capabilities.</h4>
-                            <h4>Key Responsibilities:</h4>
-                            <ul>
-                                <ul>
-                                    <li>Built responsive UI components with React and Tailwind CSS supporting custom theming</li>
-                                    <li>Implemented secure user authentication with role-based access control</li>
-                                    <li>Integrated payment gateways (Stripe, Paypal) with complete checkout functionality</li>
-                                    <li>Developed shipping integration with multiple carriers (USPS, FedEx, UPS)</li>
-                                    <li>Created real-time analytics dashboard and reporting tools</li>
-                                    <li>Built product management system with inventory tracking and alerts</li>
-                                    <li>Engineered caching strategies and error handling for production reliability</li>
-                                </ul>    
-                            </ul>
-                            <h4>
-                                Technical Skills:
-                            </h4>
-                                <p>React, Node.js, Tailwind CSS, JWT authentication, Strip/Paypal integration, shipping APIs, performance optimization, and secure coding practices</p>
-                            <h4>
-                                Results:
-                            </h4>
-                                <p>Delivered a scalable, market-ready e-commerce solution with enterprise features, robust security, and comprehensive admin controls that can handle high transaction volumes.</p>
-                        
-                    <h3>GTA Network Multiplayer Server Development (01-25 to Present)</h3>
-
-                        <h4>I have been contributing to a team that has developed a C# backend system for a GTA V multiplayer roleplay server using RAGE Multiplayer API, featuring inventory management, economy systems, and interactive gameplay elements. My contributions are as follow:</h4>
-                        <h4>Key Responsibilities:</h4>
-                        <ul>
-                            <ul>
-                                <li>Inventory System: Built persistent item storage with support for stackable items, containers, and database integration</li>
-                                <li>Trading &amp; Economy: Implemented secure player trading, currency management, and anti-exploit protections</li>
-                                <li>Game Features: Developed interactive item usage, mini-games, housing systems, and roleplay enhancements</li>
-                                <li>Technical Implementation: Created concurrent data structures, thread-safe database operations, and optimized server performance</li>
-                                <li>Security: Engineered anti-cheat measures and transaction logging to protect game integrity</li>
-                            </ul>
-                        </ul>
-                        <h4>Technical Skills:</h4>
-                        <ul>
-                            <li>C#, RAGE Multiplayer API, MySQL, JSON, Async Programming, Concurrent Data Structures</li>
-                        </ul>
-
-                    <h3>Secure RESTful API</h3>
-                    
-                        <ul>
-                            <ul>
-                                <li>Security Architecture Design</li>
-                                <li>Authentication &amp; Authorization Implementation</li>
-                                <li>Secure Data Handling</li>
-                                <li>Security Testing &amp; Validation</li>
-                                <li>Security Monitoring &amp; Maintenance</li>
-                            </ul>
-                        </ul>
-
-                    <h3>Security Dashboard</h3>
-                        <ul>
-                            <ul>
-                                <li>Data Collection &amp; Integration</li>
-                                <li>Real-time Monitoring &amp; Alerting</li>
-                                <li>Visualization &amp; Reporting</li>
-                                <li>Analysis &amp; Intelligence</li>
-                                <li>Compliance & Audit Support</li>
-                            </ul>
-                        </ul>
-                
-                <h2 class="certifications">> Certifications</h2>
-                    <ul>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/042a4e5884e3eb6ea1f2a12be6abb851" target="_blank">Learn SQL Course</a></li>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/b74a2390dfc4127fa5d43fe147425ad0" target="_blank">Learn C++ Course</a></li>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/ddc94032dd07fd43ee02f994e8f72af9" target="_blank">C++ for Programmers Course</a></li>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/fd75291f239d471e81c5a14ff80a27a8" target="_blank">Introduction to Game Development Course</a></li>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/9dba9d9b6bf64cf58b2b416ef9cd0912" target="_blank">Learn C Skill Path</a></li>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/65f0ff88f4fc58e0536b3b51648dff24" target="_blank">Learn C# Course</a></li>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/05009c20e9174378acd37e6c2d0fbfc4" target="_blank">Computer Science</a></li>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/2c47a42ead854f76aa635412f4ce4e25" target="_blank">AWS Cloud Practitioner 2023: AWS: Storage Services Course</a></li>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/6c152bd262967f8c941c9707ed636bda" target="_blank">Learn Python 3 Course</a></li>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/18580789eaba28f09e116f4fc2acec44" target="_blank">Learn Intermediate Python 3 Course</a></li>
-                        <li><a href="https://www.codecademy.com/profiles/core1525679184/certificates/9360ffd5f85216dc4fbe5b19fe1db5e4" target="-blank">Learn Advanced Python 3 Course</a></li>
-                    </ul>
-                    <p>> _<span class="cursor"></span></p>
-            </article>
-        </div>
-    </div>   
+        </section>
+    </main>
 </body>
-
 </html>

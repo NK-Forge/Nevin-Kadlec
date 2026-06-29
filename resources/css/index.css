@@ -1,319 +1,297 @@
-/* CSS variables */
+/* NK-Forge retro CRT portfolio
+   Uses resources/media/CRTface.png as the full website background.
+   This CRTface.png is square, so it is intentionally stretched to the browser
+   viewport. That makes the CRT frame touch every edge of the user's screen.
+*/
 
 :root {
-    --screen-position-top: 50%;
-    --screen-position-left: 50%;
-    --screen-width: 38vw;
-    --screen-height: 65vh;
-    --screen-max-width: 700px;
-    --screen-max-height: 630px;
+    --crt-green: #39ff6a;
+    --crt-green-soft: #8dffa8;
+    --crt-green-dim: rgba(57, 255, 106, 0.72);
+
+    /*
+      Overlay coordinates for the uploaded CRTface.png.
+      These percentages line up the scrollable HTML area with the green screen.
+      If the CRT image changes, adjust only these four values first.
+    */
+    --screen-left: 7.6vw;
+    --screen-top: 12vh;
+    --screen-width: 83.2vw;
+    --screen-height: 68vh;
 }
 
-html, body {
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
     height: 100%;
     margin: 0;
-    padding: 0;
 }
 
 body {
-    background-image: url('../media/CRT_monitor.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: #000; /* Black background behind the monitor */
-    font-family: 'Courier New', monospace;; /* Classic font for retro feel */
-    color: rgb(0, 252, 0);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Hides scrolled text */
+    overflow: hidden;
+    color: var(--crt-green);
+    font-family: "Courier New", Courier, monospace;
+    background: #050705 url("../media/CRTface.png") no-repeat center center fixed;
+    background-size: 100vw 100vh;
 }
 
-/* CRT screen area (scrollable content) */
+/* Full-screen canvas. The actual CRT image is on body so there is no outside gap. */
+.crt-site {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* HTML content is constrained to the green glass area. */
 .crt-screen {
+    position: absolute;
+    left: var(--screen-left);
+    top: var(--screen-top);
     width: var(--screen-width);
     height: var(--screen-height);
-    max-width: var(--screen-max-width);
-    max-height: var(--screen-max-height);
-    margin: 0 auto;
-    position: absolute;
-    top: var(--screen-position-top);
-    left: var(--screen-position-left);
-    transform: translate(-50%, -50%);
-    overflow: auto; /* Allows scrolling */
-    overflow-x: hidden; /* Corrects horizontal so Glitch effect doesn't trigger scroll */
-    background-color: rgba(0, 0, 0, 0); /* Slightly transpartent dark green background */
-    border-radius: 15px;  /* Slight curve to match CRT Screen */ 
-    /* box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.3);  Inner glow effect */
-
-    /* CRT scan line effect */
-    background-image: linear-gradient(
-        rgba(0,  0, 0, 0.1) 50%,
-        rgba(0, 0, 0, 0) 50%
-    );
-    background-size: 100% 4px; /* Size of the scan lines */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: clamp(0.55rem, 1vw, 1rem);
+    border-radius: 2.2% / 4.5%;
+    background:
+        linear-gradient(rgba(0, 255, 60, 0.04) 50%, rgba(0, 0, 0, 0.06) 50%),
+        radial-gradient(circle at center, rgba(31, 255, 85, 0.075), rgba(0, 15, 4, 0.04) 70%);
+    background-size: 100% 4px, 100% 100%;
+    box-shadow:
+        inset 0 0 3rem rgba(0, 255, 80, 0.12),
+        inset 0 0 1rem rgba(0, 0, 0, 0.45);
+    text-shadow: 0 0 0.35rem rgba(57, 255, 106, 0.65);
 }
 
-/* Container for content */
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 15px;
+.terminal-window {
+    width: 100%;
+    min-height: 100%;
+    border: 1px solid rgba(57, 255, 106, 0.72);
+    background: rgba(0, 10, 3, 0.20);
+    padding: clamp(0.55rem, 0.95vw, 0.85rem);
 }
 
-h1, h2 {
-    color: rgb(0, 252, 0);
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
-    font-family: 'Courier New', monospace;
+.terminal-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: calc(clamp(0.65rem, 1.1vw, 1rem) * -1) calc(clamp(0.65rem, 1.1vw, 1rem) * -1) 1rem;
+    padding: 0.45rem 0.65rem;
+    border-bottom: 1px solid rgba(57, 255, 106, 0.58);
+    color: var(--crt-green-soft);
+    font-size: clamp(0.62rem, 0.9vw, 0.82rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: clamp(4.75rem, 7.5vw, 7.5rem) 1fr;
+    gap: clamp(1rem, 2vw, 1.8rem);
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(57, 255, 106, 0.62);
+}
+
+.profile-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--crt-green);
+    box-shadow:
+        0 0 1.25rem rgba(57, 255, 106, 0.42),
+        inset 0 0 1rem rgba(57, 255, 106, 0.18);
+    filter: sepia(0.18) hue-rotate(65deg) saturate(0.95) brightness(0.92);
+}
+
+.eyebrow,
+.subtitle,
+.terminal-footer {
+    color: var(--crt-green-soft);
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+    margin-top: 0;
 }
 
 h1 {
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    margin-bottom: 8px;
+    margin-bottom: 0.3rem;
+    font-size: clamp(1.8rem, 3.8vw, 3.9rem);
+    line-height: 0.95;
+    letter-spacing: 0.03em;
 }
 
 h2 {
-    font-size: clamp(0.9rem, 1.8vw, 1.2rem);;
-    border-bottom: 1px solid rgb(0, 252, 0);
-    padding-bottom: 4px;
+    margin-bottom: 0.65rem;
+    color: var(--crt-green-soft);
+    font-size: clamp(0.95rem, 1.18vw, 1.15rem);
+    letter-spacing: 0.02em;
 }
 
 h3 {
-    text-decoration: dotted underline;
-    font-size: clamp(0.8rem, 1.6vw, 1.1rem);
+    margin-bottom: 0.25rem;
+    color: var(--crt-green-soft);
+    font-size: clamp(0.88rem, 1.05vw, 1.05rem);
+}
+
+p,
+li {
+    font-size: clamp(0.72rem, 0.86vw, 0.88rem);
+    line-height: 1.45;
 }
 
 p {
-    font-size:clamp(0.7rem, 1.4vw, 0.9rem);
-    color: rgb(0, 252, 0);;
-    line-height: 1.4;
-}
-
-a {
-    color: rgb(0, 252, 150);
-    text-decoration: none;
-    text-shadow: 0 0 5px rgba(0, 255, 150, 0.5);
-    transition: all 0.3s;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: rgb(150, 255, 150);
-    text-shadow: 0 0 15px rgba(150, 255, 150, 0.9);
-    text-decoration: none;
-}
-
-img {
-    max-width: 90%;
-    height: auto;
-    display: block;
-    border-radius: 50%;
-    border: 2px solid rgba(0, 252, 0);
-    margin: 15px auto;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    margin-bottom: 0.7rem;
 }
 
 ul {
-    list-style-type: none;
-    padding-left: 8px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    padding-left: 1.2rem;
+    margin-bottom: 0;
 }
 
-ul li {
-    position: relative;
-    padding-left: 1.2em;
+li {
+    margin-bottom: 0.45rem;
 }
 
-ul li:before {
-    content: "> ";
-    color: rgb(0, 252, 0);
+strong {
+    color: var(--crt-green-soft);
 }
 
-ul ul {
-    padding-left: 15px;
+a {
+    color: var(--crt-green-soft);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
 }
 
-ul ul li {
-    position: relative;
-    padding-left: 1.2em;
+a:hover,
+a:focus {
+    color: #caffd4;
+    text-shadow: 0 0 0.75rem rgba(202, 255, 212, 0.85);
 }
 
-ul ul li:before {
-    content: "-";
-    position: absolute;
-    left: 0;
+.grid {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
 }
 
-.coverLetter, .portfolio, .contact {
-    margin-top: 15px;
-    padding: 8px;
+.two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* Terminal cursor effect */
+.panel {
+    border: 1px solid rgba(57, 255, 106, 0.42);
+    background: rgba(0, 14, 5, 0.18);
+    padding: clamp(0.6rem, 0.95vw, 0.85rem);
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.project-list section {
+    border-left: 2px solid rgba(57, 255, 106, 0.72);
+    padding-left: 0.75rem;
+}
+
+.why {
+    color: var(--crt-green-dim);
+    font-style: italic;
+}
+
+.terminal-footer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(57, 255, 106, 0.45);
+    font-size: clamp(0.78rem, 1vw, 0.95rem);
+}
+
 .cursor {
-    display: inline-block;
-    width: 8px;
+    width: 0.6em;
     height: 1em;
-    background-color: rgb(0, 252, 0);
-    margin-left: 4px;
-    vertical-align: middle;
-    animation: blink 1s step-end infinite;
+    background: var(--crt-green);
+    box-shadow: 0 0 0.8rem rgba(57, 255, 106, 0.85);
+    animation: blink 1s steps(1) infinite;
 }
 
-/* CRT glitch effect on hover elements */
-h1:hover, h2:hover {
-    animation: textGlitch 0.3s linear;
-    text-shadow: 0 0 10px rgb(0, 252, 0);
-}
-
-/* Animations */
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
-@keyframes textGlitch {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(2px); }
-    50% { transform: translateX(-1px); }
-    75% { transform: translateX(1px); }
-    100% { transform: translateX(0); }
-}
-
-/*@keyframes crtGlow {
-    from { box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.3), 0 0 5px rgba(0, 255, 0, 0.3); }
-    to { box-shadow: inset 0 0 15px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5); }
-} */
-
-/* Scrollbar styling */
-/* For Webkit browsers (Chrome, Safari, newer Edge) */
 .crt-screen::-webkit-scrollbar {
-    width: 6px;
-    height: 6px
+    width: 0.55rem;
 }
 
 .crt-screen::-webkit-scrollbar-track {
-    background: rgba(0, 30, 0, 0.8);
+    background: rgba(0, 20, 5, 0.9);
 }
 
 .crt-screen::-webkit-scrollbar-thumb {
-    background: rgba(0, 200, 0, 0.7);
-    border-radius: 3px;
-    border: 1px solid rgba(0, 255, 0, 0.5);
-    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
-    min-height: 50px; /* Minimum height for scrollbar thumb */
+    background: rgba(57, 255, 106, 0.72);
+    border: 1px solid rgba(180, 255, 190, 0.38);
+    border-radius: 999px;
 }
 
-.crt-screen::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 255, 0, 0.8);
-}
-
-/* For Firefox */
 .crt-screen {
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 200, 0, 0.7) rgba(0, 30,0, 0.8);
+    scrollbar-color: rgba(57, 255, 106, 0.72) rgba(0, 20, 5, 0.9);
 }
 
-/* Responsive design with CSS varibles for better screen adaptation */
-:root {
-    --screen-position-top: 48%;
-    --screen-position-left: 50%;
-    --screen-width: 38vw;
-    --screen-height: 60vw;
+@media (max-width: 900px) {
+    .two-col,
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        grid-template-columns: 5.5rem 1fr;
+    }
+
+    p,
+    li {
+        font-size: clamp(0.76rem, 1.5vw, 0.95rem);
+    }
 }
 
-/* Media queries for different screen sizes */
-@media screen and (max-width: 1200px) {
+@media (max-width: 620px) {
     :root {
-        --screen-width: 45vw;
-        --screen-height: 60vh;
-        --screen-max-width: 650px;
-        --screen-max-height: 550px;
+        --screen-left: 7.6vw;
+        --screen-top: 10.4vh;
+        --screen-width: 84.8vw;
+        --screen-height: 65.2vh;
     }
-}
 
-@media screen and (max-width: 992px) {
-    :root {
-        --screen-width: 50vw;
-        --screen-height: 58vh;
-        --screen-max-width: 600px;
-        --screen-max-height: 500px;
+    .terminal-bar {
+        display: none;
     }
-}
 
-@media screen and (max-width: 768px) {
-    :root {
-        --screen-width: 60vw;
-        --screen-height: 55vh;
-        --screen-position-top: 48%;
-        --screen-max-width: 400px;
-        --screen-max-height: 450px;
+    .hero {
+        grid-template-columns: 1fr;
     }
-    
-    .crt-screen {
-        padding: 10px;
+
+    .profile-photo {
+        width: 7rem;
     }
-    
+
     h1 {
-        font-size: clamp(0.9rem, 2vw, 1.1rem);
-    }
-
-    p {
-        font-size: clamp(0.7rem, 2vw, 0.85rem);
-    }
-}
-
-@media screen and (max-width: 576px) {
-    :root {
-        --screen-width: 70vw;
-        --screen-height: 45vh;
-        --screen-position-top: 48.5%;
-        --screen-max-width: 350px;
-        --screen-max-height: 350px;
-    }
-
-    .crt-screen {
-        padding: 8px;
-    }    
-}
-
-@media screen and (max-width: 480px) {
-    :root {
-        --screen-width: 75vw;
-        --screen-height: 40vh;
-        --screen-max-width: 300px;
-        --screen-max-height: 300px;
-    }
-
-    .container {
-        width: 94%;
-        padding: 6px;
-    }
-
-    ul {
-        padding-left: 5px;
-    }
-
-    ul ul {
-        padding-left: 10px
-    }
-}
-
-/* For very small screens */
-@media screen and (max-width: 390px) and (max-height: 844px) {
-    :root {
-        --screen-width: 75vw;
-        --screen-height: 25vh;
-        --screen-position-top: 49%;
-        --screen-max-width: 270px;
-        --screen-max-height: 270px;
-    }
-
-    body {
-        background-size: 95% auto;
+        font-size: 2.2rem;
     }
 }
