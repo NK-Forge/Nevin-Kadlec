@@ -15,9 +15,9 @@
       If the CRT image changes, adjust only these four values first.
     */
     --screen-left: 7.6vw;
-    --screen-top: 12vh;
-    --screen-width: 83.2vw;
-    --screen-height: 68vh;
+    --screen-top: 10.4vh;
+    --screen-width: 84.8vw;
+    --screen-height: 65.2vh;
 }
 
 * {
